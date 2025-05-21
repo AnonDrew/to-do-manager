@@ -11,7 +11,7 @@ function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [title, setTitle] = useState("");
 
-  const baseEp = "/todos";
+  const baseEp = "https://to-do-manager-production.up.railway.app/todos";
   const idEp = (id: number) => baseEp + `/${id}`
 
   const getTodos = async () => {
