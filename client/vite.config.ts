@@ -8,8 +8,7 @@ export default defineConfig({
     host: true,
     proxy: {
       '/todos': {
-        // @ts-ignore
-        target: import.meta.env.VITE_API_URL,
+        target: 'https://to-do-manager-production.up.railway.app',
       }
     },
   },
