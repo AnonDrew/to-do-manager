@@ -20,7 +20,7 @@ services:
     environment:
       DATABASE_URL: postgres://user:password@db:5432/tododb
     ports:
-      - "5000:5000"
+      - "5001:5000"
     depends_on:
       - db
     volumes:
