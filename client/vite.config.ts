@@ -8,7 +8,8 @@ export default defineConfig({
     host: true,
     proxy: {
       '/todos': {
-        target: 'http://backend:5000',
+        // @ts-ignore
+        target: import.meta.env.VITE_API_URL,
       }
     },
   },
