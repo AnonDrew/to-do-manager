@@ -8,7 +8,7 @@ export default defineConfig({
     host: true,
     // proxy: {
     //   '/todos': {
-    //     target: 'http://localhost:5000', // only for dev
+    //     target: 'http://localhost:5000', // only for dev, uncomment this when local
     //     changeOrigin: true,
     //   },
     // },
