@@ -1,0 +1,108 @@
+:root {
+  --radius: 8px;
+  --gap: 1rem;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --primary: #2d89ef;
+  --primary-dark: #1b6dc1;
+  --danger: #d33;
+  --bg: #f9f9f9;
+  --text: #444;
+  --text-dark: #333;
+}
+
+.todo-app {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-family: sans-serif;
+  background-color: var(--bg);
+}
+
+.todo-app__title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: var(--gap);
+}
+
+/* ---- form ---- */
+.todo-app__form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  margin-bottom: var(--gap);
+}
+
+.todo-app__input {
+  flex: 1 1 auto;
+  min-width: 0; /* allow shrinking */
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+}
+
+.todo-app__add-btn {
+  flex: 0 0 auto;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.todo-app__add-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* ---- list ---- */
+.todo-app__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-app__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.todo-app__item-text {
+  flex: 1 1 auto;
+  min-width: 0; /* needed for ellipsis */
+  color: var(--text);
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: color 0.2s;
+}
+.todo-app__item-text:hover {
+  color: var(--primary);
+}
+.todo-app__item-text--done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.todo-app__del-btn {
+  flex: 0 0 auto;
+  background: transparent;
+  color: var(--danger);
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.todo-app__del-btn:hover {
+  color: #a00;
+}

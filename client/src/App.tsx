@@ -51,27 +51,50 @@ function App() {
   }
 
   return (
-    <>
-      <div>
-        <h1>To-do Manager</h1>
-        <input value={title} onChange={(e) => setTitle(e.target.value)} />
-        <button onClick={addTodo}>Add To-do</button>
-        <ul>
-          {todos.map(todo => (
-            <li key={todo.id}>
-              <span
-                style={{ textDecoration: todo.completed ? "line-through" : "" }}
-                onClick={() => toggleTodo(todo.id, todo.completed)}
-              >
-                {todo.title}
-              </span>
-              <button onClick={() => deleteTodo(todo.id)}>❌</button>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </>
-  )
+    <div className="todo-app">
+      <h1 className="todo-app__title">To-dos</h1>
+
+      <form
+        className="todo-app__form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          addTodo();
+        }}
+      >
+        <input
+          className="todo-app__input"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="What needs doing?"
+        />
+        <button type="submit" className="todo-app__add-btn">
+          Add To-do
+        </button>
+      </form>
+
+      <ul className="todo-app__list">
+        {todos.map((todo) => (
+          <li key={todo.id} className="todo-app__item">
+            <span
+              className={
+                "todo-app__item-text" +
+                (todo.completed ? " todo-app__item-text--done" : "")
+              }
+              onClick={() => toggleTodo(todo.id, todo.completed)}
+            >
+              {todo.title}
+            </span>
+            <button
+              className="todo-app__del-btn"
+              onClick={() => deleteTodo(todo.id)}
+            >
+              ❌
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default App
