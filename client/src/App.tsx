@@ -11,7 +11,7 @@ function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [title, setTitle] = useState("");
 
-  const baseEp = "http://localhost:5000/tasks";
+  const baseEp = "/todos";
   const idEp = (id: number) => baseEp + `/${id}`
 
   const getTodos = async () => {
