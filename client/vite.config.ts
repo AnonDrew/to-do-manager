@@ -6,11 +6,11 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true,
-    proxy: {
-      '/todos': {
-        target: 'https://to-do-manager-production.up.railway.app',
-        changeOrigin: true,
-      },
-    },
+    // proxy: {
+    //   '/todos': {
+    //     target: 'http://localhost:5000', // only for dev
+    //     changeOrigin: true,
+    //   },
+    // },
   },
 })
