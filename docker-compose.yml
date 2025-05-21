@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTRGES_PASSWORD: password
+      POSTGRES_DB: tododb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./server
+      dockerfile: ../Dockerfile.server
+    environment:
+      DATABASE_URL: postgres://user:password@db:5432/tododb
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+  
+  frontend:
+    build:
+      context: ./client
+      dockerfile: ../Dockerfile.client
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+
+volumes:
+  pgdata:
