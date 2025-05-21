@@ -15,7 +15,7 @@ services:
   backend:
     build:
       context: ./server
-      #dockerfile: Dockerfile.server
+      #dockerfile: ../Dockerfile.server
       dockerfile: ../Dockerfile.server.dev
     environment:
       DATABASE_URL: postgres://user:password@db:5432/tododb
