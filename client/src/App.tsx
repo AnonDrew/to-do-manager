@@ -19,6 +19,10 @@ function App() {
     setTodos(data);
   };
 
+  useEffect(() => {
+    getTodos();
+  }, []);
+
   return (
     <>
       Hello world!
