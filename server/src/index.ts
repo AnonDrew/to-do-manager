@@ -20,6 +20,10 @@ app.get("/todos", async (_, res) => {
   res.json(result.rows);
 });
 
+app.get("/", async (req, res) => {
+  res.status(200).send("Hello World!");
+});
+
 app.post("/todos", async (req, res) => {
   const { title } = req.body;
   const result = await pool.query(
