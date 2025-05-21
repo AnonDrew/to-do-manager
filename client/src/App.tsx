@@ -52,7 +52,24 @@ function App() {
 
   return (
     <>
-      Hello world!
+      <div>
+        <h1>Todo Manager</h1>
+        <input value={title} onChange={(e) => setTitle(e.target.value)} />
+        <button onClick={addTodo}>Add Todo</button>
+        <ul>
+          {todos.map(todo => (
+            <li key={todo.id}>
+              <span
+                style={{ textDecoration: todo.completed ? "line-through" : "" }}
+                onClick={() => toggleTodo(todo.id, todo.completed)}
+              >
+                {todo.title}
+              </span>
+              <button onClick={() => deleteTodo(todo.id)}>❌</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   )
 }
