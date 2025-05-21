@@ -5,7 +5,7 @@ services:
     image: postgres
     environment:
       POSTGRES_USER: user
-      POSTRGES_PASSWORD: password
+      POSTGRES_PASSWORD: password
       POSTGRES_DB: tododb
     ports:
       - "5432:5432"
