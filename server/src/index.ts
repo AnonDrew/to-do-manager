@@ -44,3 +44,5 @@ app.delete("/todos/:id", async (req, res) => {
   await pool.query("DELETE FROM todos WHERE id = $1", [id]);
   res.sendStatus(204);
 });
+
+app.listen(port, '0.0.0.0', () => console.log(`Server running on port ${port}`));
