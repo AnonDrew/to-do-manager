@@ -53,9 +53,9 @@ function App() {
   return (
     <>
       <div>
-        <h1>Todo Manager</h1>
+        <h1>To-do Manager</h1>
         <input value={title} onChange={(e) => setTitle(e.target.value)} />
-        <button onClick={addTodo}>Add Todo</button>
+        <button onClick={addTodo}>Add To-do</button>
         <ul>
           {todos.map(todo => (
             <li key={todo.id}>
