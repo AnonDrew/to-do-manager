@@ -9,7 +9,8 @@ export default defineConfig({
     proxy: {
       '/todos': {
         target: 'https://to-do-manager-production.up.railway.app',
-      }
+        changeOrigin: true,
+      },
     },
   },
 })
