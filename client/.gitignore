@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Stuff I didn't want tracked
+eslint.config.js
+README.md
+tsconfig.app.json
+tsconfig.node.json
+*.svg
