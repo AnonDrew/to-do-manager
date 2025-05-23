@@ -60,3 +60,7 @@ Gained hands-on experience with full-stack application deployment.
   •	(VSCode Free Copilot thing?) Most of the commit messages to reduce the overhead tedium of using git properly
 	
   •	Writing this README 😄
+
+The main new thing for me in this project was the deployment side of things, which was surprisingly straight forward thanks to the available services.
+I originally planned on using Docker for manual deployment, but I was short on time so I only leveraged it for local dev.
+Hopefully it makes reproducing my environment straight forward too.
