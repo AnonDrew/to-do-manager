@@ -56,5 +56,7 @@ Gained hands-on experience with full-stack application deployment.
   •	Clarifying Vite and Express setup
   
   •	All CSS styling (I suck at it and it takes too long)
+
+  •	(VSCode Free Copilot thing?) Most of the commit messages to reduce the overhead tedium of using git properly
 	
   •	Writing this README 😄
