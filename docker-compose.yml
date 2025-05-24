@@ -14,7 +14,7 @@ services:
   backend:
     build:
       context: ./server
-      dockerfile: ../Dockerfile.server
+      dockerfile: ../docker/Dockerfile.server
     environment:
       DATABASE_URL: postgres://user:password@db:5432/tododb
     ports:
@@ -28,7 +28,7 @@ services:
   frontend:
     build:
       context: ./client
-      dockerfile: ../Dockerfile.client
+      dockerfile: ../docker/Dockerfile.client
     ports:
       - "5173:5173"
     depends_on:
