@@ -8,8 +8,16 @@ dotenv.config()
 const app = express()
 const port = 5000;
 
+const allowedOrigins = (process.env.CLIENT_ORIGINS || '').split(',');
 app.use(cors({
-  origin: process.env.CLIENT_ORIGIN,
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin || '')) {
+      callback(null, true);
+    } else {
+      console.warn(`Blocked by CORS: ${origin}`);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
 }));
 
