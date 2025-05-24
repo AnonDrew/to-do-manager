@@ -11,7 +11,7 @@ function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [title, setTitle] = useState("");
 
-  const baseEp = "/todos"
+  const baseEp = import.meta.env.VITE_API_URL + "/todos"
   const idEp = (id: number) => baseEp + `/${id}`
 
   const getTodos = async () => {

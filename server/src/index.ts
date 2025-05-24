@@ -7,21 +7,26 @@ dotenv.config()
 
 const app = express()
 const port = 5000;
-app.use(cors());
+
+app.use(cors({
+  origin: process.env.FRONTEND_ORIGIN,
+  credentials: true,
+}));
+
 app.use(express.json());
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
+app.get("/", async (req, res) => {
+  res.status(200).send("Hello World!");
+});
+
 app.get("/todos", async (_, res) => {
   const q = "SELECT * FROM todos ORDER BY id";
   const result = await pool.query(q);
   res.json(result.rows);
-});
-
-app.get("/", async (req, res) => {
-  res.status(200).send("Hello World!");
 });
 
 app.post("/todos", async (req, res) => {
@@ -49,4 +54,4 @@ app.delete("/todos/:id", async (req, res) => {
   res.sendStatus(204);
 });
 
-app.listen(port, '0.0.0.0', () => console.log(`Server running on port ${port}`));
+app.listen(port, () => console.log(`Server running on port ${port}`));
